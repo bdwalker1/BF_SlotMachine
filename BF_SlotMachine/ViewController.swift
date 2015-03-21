@@ -111,6 +111,7 @@ class ViewController: UIViewController {
         {
             nCredits += nBet
             nBet = 0
+            nPayout = 0
             self.updateInfoContainer()
         }
         // If current bet is 0, reset resets the entire game
@@ -133,6 +134,7 @@ class ViewController: UIViewController {
             {
                 nBet += 1
                 nCredits -= 1
+                nPayout = 0
                 self.updateInfoContainer()
             }
             // If max bet already reached, show alert
@@ -164,6 +166,7 @@ class ViewController: UIViewController {
                 // Transfer the additional bet from credits to bet
                 nBet += nNewBet
                 nCredits -= nNewBet
+                nPayout = 0
                 self.updateInfoContainer()
             }
             // If max bet already reached, show alert
@@ -200,6 +203,10 @@ class ViewController: UIViewController {
             // Calculate payout and adjust credits
             nPayout = nBet * SlotBrain.computeWinnings(slots)
             nCredits += nPayout
+            if ( nPayout > 0)
+            {
+                self.playAudioResource("payout.wav")
+            }
             
             // Adjust bet based on auto bet switch
             if (!self.chkAutoBet.on)
@@ -240,7 +247,6 @@ class ViewController: UIViewController {
         if (nPayout > 0)
         {
             self.lblPayout.backgroundColor = UIColor.yellowColor()
-            self.playAudioResource("payout.wav")
         }
         else
         {
