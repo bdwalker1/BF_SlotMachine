@@ -218,16 +218,102 @@ class ViewController: UIViewController {
             self.updateInfoContainer()
         }
     }
-    
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
-    }
 
+    // Helper Functions
+    
+//    func delay(delay:Double, closure:()->()) {
+//        dispatch_after(
+//            dispatch_time(
+//                DISPATCH_TIME_NOW,
+//                Int64(delay * Double(NSEC_PER_SEC))
+//            ),
+//            dispatch_get_main_queue(), closure)
+//    }
+    
+    func updateInfoContainer() {
+        
+        // Update the screen with the current credits, bet and payout values
+        self.lblCredits.text = "\(nCredits)"
+        self.lblBet.text = "\(nBet)"
+        self.lblPayout.text = "\(nPayout)"
+        
+        if (nPayout > 0)
+        {
+            self.lblPayout.backgroundColor = UIColor.yellowColor()
+            self.playAudioResource("payout.wav")
+        }
+        else
+        {
+            self.lblPayout.backgroundColor = self.lblBet.backgroundColor
+        }
+        
+        // Set reset button text based on bet > 0
+        if (nBet > 0)
+        {
+            self.btnReset.setTitle("Reset Bet", forState: UIControlState.Normal)
+            self.btnReset.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+            self.btnReset.backgroundColor = UIColor.cyanColor()
+        }
+        else
+        {
+            self.btnReset.setTitle("Reset Game", forState: UIControlState.Normal)
+            self.btnReset.setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
+            self.btnReset.backgroundColor = UIColor.purpleColor()
+        }
+    }
+    
+    func showAlertWithText(header: String = "Warning", message: String ) {
+        var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil )
+    }
+    
+    func playAudioResource( strResource: String ) {
+        if var strAudioPath = NSBundle.mainBundle().pathForResource(strResource.stringByDeletingPathExtension, ofType:strResource.stringByReplacingOccurrencesOfString(strResource.stringByDeletingPathExtension+".", withString: "", options: nil, range: nil))
+        {
+            var urlAudioPath = NSURL.fileURLWithPath(strAudioPath)
+            audioPlayer = AVAudioPlayer(contentsOfURL: urlAudioPath, error: nil)
+            audioPlayer.enableRate = true
+        } else {
+            println("file path is empty")
+        }
+        self.audioPlayer.prepareToPlay()
+        self.audioPlayer.play()
+    }
+    
+    func removeSlotImageViews() {
+        // Verify the slots container exists
+        if (self.viewSlotsContainer != nil)
+        {
+            let container: UIView? = self.viewSlotsContainer!
+            
+            // Remove all the sub views (the only thing that should be in this container
+            // are the 9 image views so we remove all sub views
+            let subviews:Array? = container!.subviews
+            for view in subviews!
+            {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
+    func hardReset() {
+        
+        // Remove all image views from slots container
+        self.removeSlotImageViews()
+        
+        // clear our slots array
+        slots.removeAll(keepCapacity: true)
+        
+        // redraw the initial slots container
+        self.setupSlotsContainer(self.viewSlotsContainer)
+        
+        // Reset credits, bet and payout then update screen
+        self.nCredits = 50
+        self.nPayout = 0
+        self.nBet = 0
+        self.updateInfoContainer()
+    }
     
     // Setup functions
     
@@ -295,23 +381,7 @@ class ViewController: UIViewController {
             
         }
     }
-    
-    func removeSlotImageViews() {
-        // Verify the slots container exists
-        if (self.viewSlotsContainer != nil)
-        {
-            let container: UIView? = self.viewSlotsContainer!
-            
-            // Remove all the sub views (the only thing that should be in this container 
-            // are the 9 image views so we remove all sub views
-            let subviews:Array? = container!.subviews
-            for view in subviews!
-            {
-                view.removeFromSuperview()
-            }
-        }
-    }
-    
+
     func setupInfoContainer(containerView: UIView) {
 
         // Set font sizes based on container size
@@ -474,75 +544,6 @@ class ViewController: UIViewController {
         self.chkAutoBet.transform = CGAffineTransformMakeScale(0.75, 0.75)
         self.chkAutoBet.center = CGPoint(x: (containerView.frame.width * (5.0 * kEighth) + self.chkAutoBet.frame.width), y: containerView.frame.height * (6.0 * kEighth))
         containerView.addSubview(self.chkAutoBet)
-    }
-    
-    func hardReset() {
-        
-        // Remove all image views from slots container
-        self.removeSlotImageViews()
-        
-        // clear our slots array
-        slots.removeAll(keepCapacity: true)
-        
-        // redraw the initial slots container
-        self.setupSlotsContainer(self.viewSlotsContainer)
-        
-        // Reset credits, bet and payout then update screen
-        self.nCredits = 50
-        self.nPayout = 0
-        self.nBet = 0
-        self.updateInfoContainer()
-    }
-    
-    func updateInfoContainer() {
-        
-        // Update the screen with the current credits, bet and payout values
-        self.lblCredits.text = "\(nCredits)"
-        self.lblBet.text = "\(nBet)"
-        self.lblPayout.text = "\(nPayout)"
-
-        if (nPayout > 0)
-        {
-            self.lblPayout.backgroundColor = UIColor.yellowColor()
-            self.playAudioResource("payout.wav")
-        }
-        else
-        {
-            self.lblPayout.backgroundColor = self.lblBet.backgroundColor
-        }
-
-        // Set reset button text based on bet > 0
-        if (nBet > 0)
-        {
-            self.btnReset.setTitle("Reset Bet", forState: UIControlState.Normal)
-            self.btnReset.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-            self.btnReset.backgroundColor = UIColor.cyanColor()
-        }
-        else
-        {
-            self.btnReset.setTitle("Reset Game", forState: UIControlState.Normal)
-            self.btnReset.setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
-            self.btnReset.backgroundColor = UIColor.purpleColor()
-        }
-    }
-    
-    func showAlertWithText(header: String = "Warning", message: String ) {
-        var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil )
-    }
-
-    func playAudioResource( strResource: String ) {
-        if var strAudioPath = NSBundle.mainBundle().pathForResource(strResource.stringByDeletingPathExtension, ofType:strResource.stringByReplacingOccurrencesOfString(strResource.stringByDeletingPathExtension+".", withString: "", options: nil, range: nil))
-        {
-            var urlAudioPath = NSURL.fileURLWithPath(strAudioPath)
-            audioPlayer = AVAudioPlayer(contentsOfURL: urlAudioPath, error: nil)
-            audioPlayer.enableRate = true
-        } else {
-            println("file path is empty")
-        }
-        self.audioPlayer.prepareToPlay()
-        self.audioPlayer.play()
     }
 }
 
