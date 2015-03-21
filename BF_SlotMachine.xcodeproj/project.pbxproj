@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F2D3F371ABC84C200032786 /* SlotBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D3F361ABC84C200032786 /* SlotBrain.swift */; };
+		0F2D3F6D1ABD3E5700032786 /* payout.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F2D3F6C1ABD3E5700032786 /* payout.wav */; };
 		0F34C5B91ABBE76A00D4DEDA /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34C5B81ABBE76A00D4DEDA /* Slot.swift */; };
 		0F34C5BB1ABBE94D00D4DEDA /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34C5BA1ABBE94D00D4DEDA /* Factory.swift */; };
 		0F6AA51B1ABB9D7300202CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6AA51A1ABB9D7300202CAB /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0F2D3F361ABC84C200032786 /* SlotBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotBrain.swift; sourceTree = "<group>"; };
+		0F2D3F6C1ABD3E5700032786 /* payout.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = payout.wav; sourceTree = "<group>"; };
 		0F34C5B81ABBE76A00D4DEDA /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		0F34C5BA1ABBE94D00D4DEDA /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		0F6AA5151ABB9D7300202CAB /* BF_SlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BF_SlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 		0F6AA5181ABB9D7300202CAB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0F2D3F6C1ABD3E5700032786 /* payout.wav */,
 				0F6AA5191ABB9D7300202CAB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -201,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2D3F6D1ABD3E5700032786 /* payout.wav in Resources */,
 				0F6AA5201ABB9D7300202CAB /* Main.storyboard in Resources */,
 				0F6AA5251ABB9D7300202CAB /* LaunchScreen.xib in Resources */,
 				0F6AA5221ABB9D7300202CAB /* Images.xcassets in Resources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -24,6 +25,9 @@ class ViewController: UIViewController {
     
     let kMaxBet = 5
     
+    // Audio Player
+    var audioPlayer = AVAudioPlayer()
+    
     // View containers for our four distinct screen sections
     var viewTitleContainer: UIView!
     var viewSlotsContainer: UIView!
@@ -40,6 +44,7 @@ class ViewController: UIViewController {
     var lblCreditsTitle: UILabel!
     var lblBetTitle: UILabel!
     var lblPayoutTitle: UILabel!
+    var btnPayoutTable: UIButton!
     
     // Controls
     var btnReset: UIButton!
@@ -83,6 +88,23 @@ class ViewController: UIViewController {
 
     // Action functions
 
+    func showPayoutTable(button: UIButton) {
+        // Display the payout rates
+
+        var payouts = Payouts()
+
+        var strPayouts:String = ""
+        strPayouts += "\r\nFlush: x\(payouts.kFlushMultiplier)"
+        strPayouts += "\r\n3 of a Kind: x\(payouts.k3OfKindMultiplier)"
+        strPayouts += "\r\nStraight: x\(payouts.kStraightMultiplier)"
+        strPayouts += "\r\n\r\nBONUSES"
+        strPayouts += "\r\n3 Flushes: x\(payouts.kEpicFlushMultiplier)"
+        strPayouts += "\r\n3 Triples: x\(payouts.kEpic3OfKindMultiplier)"
+        strPayouts += "\r\n3 Straights: x\(payouts.kEpicStraightMultiplier)"
+        
+        self.showAlertWithText(header: "Payouts", message: strPayouts)
+    }
+    
     func resetButtonPressed(button: UIButton) {
         // If a bet has been placed, Reset only resets the current bet
         if (nBet > 0)
@@ -154,6 +176,10 @@ class ViewController: UIViewController {
     
     func spinPressed(button: UIButton) {
         
+        // Reset Payout
+        nPayout = 0
+        self.updateInfoContainer()
+
         // Bet Placed?
         if (nBet == 0)
         {
@@ -192,6 +218,16 @@ class ViewController: UIViewController {
             self.updateInfoContainer()
         }
     }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+
     
     // Setup functions
     
@@ -353,6 +389,18 @@ class ViewController: UIViewController {
         self.lblPayoutTitle.center = CGPoint(x: (containerView.frame.width * kSixth) + (containerView.frame.width * CGFloat(2.0) * kThird), y: containerView.frame.height * (CGFloat(2.0) * kThird))
         self.lblPayoutTitle.textAlignment = NSTextAlignment.Center
         containerView.addSubview(self.lblPayoutTitle)
+
+        // Setup the reset button
+        self.btnPayoutTable = UIButton()
+        self.btnPayoutTable.setTitle("(?)", forState: UIControlState.Normal)
+        self.btnPayoutTable.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.btnPayoutTable.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: kLabelFontSize * 0.9)
+        self.btnPayoutTable.sizeToFit()
+        self.btnPayoutTable.bounds.size.height = (self.btnPayoutTable.frame.height - CGFloat(6))
+        self.btnPayoutTable.center = CGPoint(x: (containerView.frame.width * kSixth) + (containerView.frame.width * CGFloat(2.0) * kThird) + (self.lblPayoutTitle.frame.width * 0.5) + (self.btnPayoutTable.frame.width * 0.5), y: containerView.frame.height * (CGFloat(2.0) * kThird) )
+        self.btnPayoutTable.addTarget(self, action: "showPayoutTable:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.btnPayoutTable)
+        
     }
     
     func setupControlContainer(containerView: UIView) {
@@ -453,6 +501,16 @@ class ViewController: UIViewController {
         self.lblBet.text = "\(nBet)"
         self.lblPayout.text = "\(nPayout)"
 
+        if (nPayout > 0)
+        {
+            self.lblPayout.backgroundColor = UIColor.yellowColor()
+            self.playAudioResource("payout.wav")
+        }
+        else
+        {
+            self.lblPayout.backgroundColor = self.lblBet.backgroundColor
+        }
+
         // Set reset button text based on bet > 0
         if (nBet > 0)
         {
@@ -472,6 +530,19 @@ class ViewController: UIViewController {
         var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil )
+    }
+
+    func playAudioResource( strResource: String ) {
+        if var strAudioPath = NSBundle.mainBundle().pathForResource(strResource.stringByDeletingPathExtension, ofType:strResource.stringByReplacingOccurrencesOfString(strResource.stringByDeletingPathExtension+".", withString: "", options: nil, range: nil))
+        {
+            var urlAudioPath = NSURL.fileURLWithPath(strAudioPath)
+            audioPlayer = AVAudioPlayer(contentsOfURL: urlAudioPath, error: nil)
+            audioPlayer.enableRate = true
+        } else {
+            println("file path is empty")
+        }
+        self.audioPlayer.prepareToPlay()
+        self.audioPlayer.play()
     }
 }
 

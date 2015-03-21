@@ -10,13 +10,249 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BF_SlotMachine/ViewController.swift"
-            timestampString = "448586439.527107"
+            timestampString = "448609221.07028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "supportedInterfaceOrientations()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BF_SlotMachine/SlotBrain.swift"
+            timestampString = "448606551.176743"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "computeWinnings(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BF_SlotMachine/ViewController.swift"
+            timestampString = "448609221.07028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "showPayoutTable(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BF_SlotMachine/ViewController.swift"
+            timestampString = "448608702.47547"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.viewSlotsContainer.getter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIView&gt;"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608702.494404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.viewSlotsContainer.setter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIView&gt;"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608702.494809"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.viewSlotsContainer.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIView&gt;"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608702.495169"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.init (BF_SlotMachine.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; BF_SlotMachine.ViewController"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608702.495512"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "270">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.init (BF_SlotMachine.ViewController.Type)() -&gt; BF_SlotMachine.ViewController"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608702.495763"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "289">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.init (BF_SlotMachine.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; BF_SlotMachine.ViewController"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608702.4961"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BF_SlotMachine/ViewController.swift"
+            timestampString = "448608704.977303"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.viewInfoContainer.getter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIView&gt;"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608704.985148"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.viewInfoContainer.setter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIView&gt;"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608704.985845"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.viewInfoContainer.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIView&gt;"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608704.986223"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.init (BF_SlotMachine.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; BF_SlotMachine.ViewController"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608704.986583"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "293">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.init (BF_SlotMachine.ViewController.Type)() -&gt; BF_SlotMachine.ViewController"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608704.986914"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BF_SlotMachine.ViewController.init (BF_SlotMachine.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; BF_SlotMachine.ViewController"
+                  moduleName = "BF_SlotMachine"
+                  urlString = "file:///Users/bdwalker1/Documents/XCode/BF_SlotMachine/BF_SlotMachine/ViewController.swift"
+                  timestampString = "448608704.987249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "323">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

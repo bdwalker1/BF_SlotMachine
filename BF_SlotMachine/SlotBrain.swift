@@ -8,9 +8,19 @@
 
 import Foundation
 
+struct Payouts {
+
+    // Constants
+    let kFlushMultiplier: Int = 1
+    let k3OfKindMultiplier: Int = 3
+    let kStraightMultiplier: Int = 1
+    let kEpicFlushMultiplier: Int = 15
+    let kEpic3OfKindMultiplier: Int = 50
+    let kEpicStraightMultiplier: Int = 1000
+}
 
 class SlotBrain {
-    
+
     class func unpackSlotsIntoRows(slotCols: [[Slot]]) -> [[Slot]] {
         // This function translates our slot cells into rows for calculating winnings
         var slotRows:[[Slot]] = [[]]
@@ -34,21 +44,22 @@ class SlotBrain {
         var nStraightCount = 0  // Count of straights (three adjacent cards in ascending or descending order)
         
         // Begin by translating slot cells into rows
-        var slotRows = unpackSlotsIntoRows(slots)
+        var slotRows = self.unpackSlotsIntoRows(slots)
         
         // Check each row for winning combinations
         for slotRow in slotRows
         {
-            if isFlush(slotRow) { nFlushCount++ }
-            if is3ofKind(slotRow) { n3ofKindCount++ }
-            if isStraight(slotRow) { nStraightCount++ }
+            if self.isFlush(slotRow) { nFlushCount++ }
+            if self.is3ofKind(slotRow) { n3ofKindCount++ }
+            if self.isStraight(slotRow) { nStraightCount++ }
         }
 
         // Determine win factor
-        nWinFactor = nFlushCount + (3 * n3ofKindCount) + nStraightCount
-        if (nFlushCount==3) { nWinFactor += 15 }
-        if (n3ofKindCount==3) { nWinFactor += 50 }
-        if (nStraightCount==3) { nWinFactor += 1000 }
+        var payouts = Payouts()
+        nWinFactor = (nFlushCount * payouts.kFlushMultiplier) + (n3ofKindCount * payouts.k3OfKindMultiplier) + (nStraightCount * payouts.kStraightMultiplier)
+        if (nFlushCount==3) { nWinFactor += payouts.kEpicFlushMultiplier }
+        if (n3ofKindCount==3) { nWinFactor += payouts.kEpic3OfKindMultiplier }
+        if (nStraightCount==3) { nWinFactor += payouts.kEpicStraightMultiplier }
         return nWinFactor
     }
     

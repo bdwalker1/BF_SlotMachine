@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>847632A8-BDB9-438D-BD88-6BED6A7C5385</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BF_SlotMachine</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DD6D5C7ED52724BF6AA53C9B433954842451E023</key>
+		<string>https://github.com/bdwalker1/BF_SlotMachine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BF_SlotMachine.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DD6D5C7ED52724BF6AA53C9B433954842451E023</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bdwalker1/BF_SlotMachine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DD6D5C7ED52724BF6AA53C9B433954842451E023</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DD6D5C7ED52724BF6AA53C9B433954842451E023</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BF_SlotMachine</string>
+		</dict>
+	</array>
+</dict>
+</plist>
